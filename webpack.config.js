@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const FileManagerPlugin = require("filemanager-webpack-plugin");
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 
@@ -16,7 +16,7 @@ module.exports = {
         rules: [
             {
                 test: /\.html$/,
-                use: 'html-loader'
+                use: 'html-loader',
             },
             {
                 test: /\.js$/,
@@ -25,7 +25,12 @@ module.exports = {
             },
             {
                 test: /\.(scss|css)$/,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader',
+                ],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -51,11 +56,11 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
-        })
+        }),
     ],
     devServer: {
-         watchFiles: path.join(__dirname, 'src'),
-         port: 3377,
+        watchFiles: path.join(__dirname, 'src'),
+        port: 3377,
     },
     optimization: {
         minimizer: [
