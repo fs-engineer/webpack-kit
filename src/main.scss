@@ -1,0 +1,13 @@
+$font-size: 1rem;
+$font-color: #5ce7ff;
+$font-family: 'Roboto';
+
+html {
+  font-family: $font-family;
+  font-size: $font-size;
+  color: $font-color;
+}
+
+.logo {
+  width: 10em;
+}
